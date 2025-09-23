@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../api/controller/login";
 export default function Login() {
   const [isRegister, setIsRegister] = useState(false);
   const [passwordError, setPasswordError] = useState("");
@@ -39,6 +40,26 @@ export default function Login() {
       );
       return;
     }
+
+
+    // Use actual form values for login
+    loginUser({
+      userName: email,
+      password: password
+    })
+      .then((data) => {
+        console.log("Login successful:", data);
+        // Handle successful login (e.g., store token, redirect)
+        setPasswordError("");
+        alert("Login successful! Redirecting to home...");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Login failed:", error);
+        setPasswordError("Login failed. Please check your credentials.");
+      });
+
+
 
     // Navigation to home (simulated)
     setPasswordError("");
