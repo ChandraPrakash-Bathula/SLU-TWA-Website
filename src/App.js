@@ -9,7 +9,7 @@ import News from "./pages/News";
 import VideoPlatform from "./pages/VideoPlatform";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
-
+import Admin from "./pages/Admin";
 // fallback page for invalid routes
 function NotFound() {
   return (
@@ -53,6 +53,8 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/video" element={<VideoPlatform />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Admin route */}
+          <Route path="/admin" element={<Admin />} />
           {/* fallback */}
           <Route path="*" element={<NotFound />} />
         </Routes>

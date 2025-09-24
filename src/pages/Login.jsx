@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api/controller/login";
+import { signUpUser } from "../api/controller/SignUp";
 export default function Login() {
   const [isRegister, setIsRegister] = useState(false);
   const [passwordError, setPasswordError] = useState("");
@@ -41,15 +42,22 @@ export default function Login() {
       return;
     }
 
-
+    if (!isRegister) {
     // Use actual form values for login
     loginUser({
       userName: email,
       password: password
     })
       .then((data) => {
+        console.log(data)
         console.log("Login successful:", data);
-        // Handle successful login (e.g., store token, redirect)
+        // Save token and userType to localStorage
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        }
+        if (data.userType) {
+          localStorage.setItem("userType", data.userType);
+        }
         setPasswordError("");
         alert("Login successful! Redirecting to home...");
         navigate("/");
@@ -59,11 +67,29 @@ export default function Login() {
         setPasswordError("Login failed. Please check your credentials.");
       });
 
+      // navigate("/");
 
+} else {
+      // Registration logic using signUpUser
+      const userData = {
+        name: fullName,
+        userName: email,
+        password,
+      };
+      console.log("Registering user:", userData);
+      signUpUser(userData)
+        .then((data) => {
+          alert("Registration successful! Please login.");
+          setIsRegister(false);
+        })
+        .catch((error) => {
+          setPasswordError("Registration failed. Please try again.",error);
+        });
+    }
 
-    // Navigation to home (simulated)
-    setPasswordError("");
-    alert("Login successful! Redirecting to home...");
+    // // Navigation to home (simulated)
+    // setPasswordError("");
+    // alert("Login successful! Redirecting to home...");
   };
 
   return (
