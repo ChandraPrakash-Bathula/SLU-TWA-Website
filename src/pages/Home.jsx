@@ -1,7 +1,7 @@
 import React from "react";
 import twa from "../assets/TWA.png";
 import Checker from "../assets/Checker.svg";
-import PartnerCard from "../pages/PartnerCard";   // ✅ use component
+import PartnerCard from "../pages/PartnerCard";   
 
 export default function Home() {
   return (
@@ -16,11 +16,11 @@ export default function Home() {
         <p className="text-md text-left my-4 font-bold text-center w-[90%]">
          TWA connects justice-involved individuals with fair-chance employers.
           Also referred to as second-chance employers, these are businesses and
-          organizations that are willing to look past the person’s record to the
+          organizations that are willing to look past the person's record to the
           talent the jobseeker has to offer. Some fair chance employers can hire
           people with any criminal background while others must be more
           selective based on a variety of factors. While TWA is housed at Saint
-          Louis University, the program’s footprint now expands beyond the St.
+          Louis University, the program's footprint now expands beyond the St.
           Louis Area to also incorporate collocated services offered pre-release
           at five institutions as well as to individuals going home to the
           metropolitan areas of Kansas City, Springfield, and Columbia.
@@ -38,7 +38,7 @@ export default function Home() {
           className="flex flex-col justify-start items-center bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${Checker})` }}
         >
-          <PartnerCard />  {/* ✅ Component */}
+          <PartnerCard /> 
         </div>
       </section>
     </main>

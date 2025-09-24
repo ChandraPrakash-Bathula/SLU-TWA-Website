@@ -1,104 +1,106 @@
 
 import React from "react";
 import { Calendar, Users, TrendingUp, Award, MapPin, Building } from "lucide-react";
+import { timelineEvents,institutions,testimonials, impactStats } from "../data/whoWeAreData";
+import Community from "./Community";
 
-const teamMembers = [
-  {
-    name: "Meredith RJ",
-    role: "Program Director",
-    email: "meredith.rj@slu.edu",
-    phone: "314-555-1234",
-  },
-  {
-    name: "Nikki Chilton",
-    role: "Coordinator",
-    email: "nikki.chilton@slu.edu",
-    phone: "314-555-5678",
-  },
-  {
-    name: "John Doe",
-    role: "Employment Specialist",
-    email: "john.doe@slu.edu",
-    phone: "314-555-9101",
-  },
-  {
-    name: "Jane Smith",
-    role: "Community Outreach",
-    email: "jane.smith@slu.edu",
-    phone: "314-555-1122",
-  },
-];
+// const teamMembers = [
+//   {
+//     name: "Meredith RJ",
+//     role: "Program Director",
+//     email: "meredith.rj@slu.edu",
+//     phone: "314-555-1234",
+//   },
+//   {
+//     name: "Nikki Chilton",
+//     role: "Coordinator",
+//     email: "nikki.chilton@slu.edu",
+//     phone: "314-555-5678",
+//   },
+//   {
+//     name: "John Doe",
+//     role: "Employment Specialist",
+//     email: "john.doe@slu.edu",
+//     phone: "314-555-9101",
+//   },
+//   {
+//     name: "Jane Smith",
+//     role: "Community Outreach",
+//     email: "jane.smith@slu.edu",
+//     phone: "314-555-1122",
+//   },
+// ];
 
-const timelineEvents = [
-  {
-    year: "2018",
-    title: "Foundation",
-    description: "TWA began its efforts in St. Louis in April 2018 by partnering with the U.S. Attorney's Office and federal and state probation and parole offices to sponsor the inaugural Second Chance Job Fair at Chaifetz Arena."
-  },
-  {
-    year: "2019",
-    title: "Growth",
-    description: "The St. Louis Second Chance Job Fair drew 1,000 attendees, including 77 employers committed to looking at candidates holistically. TWA expanded to provide year-round job search assistance."
-  },
-  {
-    year: "2020",
-    title: "Innovation",
-    description: "TWA quickly pivoted to an innovative virtual format when the April job fair was impacted by pandemic restrictions, incorporating video resumes and volunteer job coaches."
-  },
-  {
-    year: "2021",
-    title: "Expansion",
-    description: "In addition to two job fairs and year-round services, TWA began a pilot program serving individuals inside the St. Louis County Justice Center pre-release and developed employer training programs."
-  },
-  {
-    year: "2022",
-    title: "Funding",
-    description: "TWA received generous funding from the Lutheran Foundation, the Pershing Charitable Trust, and other foundations to increase capacity and hire additional staff."
-  },
-  {
-    year: "2023",
-    title: "Institutional Partnerships",
-    description: "TWA began working with five Missouri Department of Corrections institutions, preparing participants through pre-release services and connecting them with employment opportunities."
-  },
-  {
-    year: "2024",
-    title: "Statewide Impact",
-    description: "TWA was awarded funding for statewide expansion by MO DOC, with employment specialists working in St. Louis, Kansas City, Columbia, and Springfield."
-  }
-];
+// const timelineEvents = [
+//   {
+//     year: "2018",
+//     title: "Foundation",
+//     description: "TWA began its efforts in St. Louis in April 2018 by partnering with the U.S. Attorney's Office and federal and state probation and parole offices to sponsor the inaugural Second Chance Job Fair at Chaifetz Arena."
+//   },
+//   {
+//     year: "2019",
+//     title: "Growth",
+//     description: "The St. Louis Second Chance Job Fair drew 1,000 attendees, including 77 employers committed to looking at candidates holistically. TWA expanded to provide year-round job search assistance."
+//   },
+//   {
+//     year: "2020",
+//     title: "Innovation",
+//     description: "TWA quickly pivoted to an innovative virtual format when the April job fair was impacted by pandemic restrictions, incorporating video resumes and volunteer job coaches."
+//   },
+//   {
+//     year: "2021",
+//     title: "Expansion",
+//     description: "In addition to two job fairs and year-round services, TWA began a pilot program serving individuals inside the St. Louis County Justice Center pre-release and developed employer training programs."
+//   },
+//   {
+//     year: "2022",
+//     title: "Funding",
+//     description: "TWA received generous funding from the Lutheran Foundation, the Pershing Charitable Trust, and other foundations to increase capacity and hire additional staff."
+//   },
+//   {
+//     year: "2023",
+//     title: "Institutional Partnerships",
+//     description: "TWA began working with five Missouri Department of Corrections institutions, preparing participants through pre-release services and connecting them with employment opportunities."
+//   },
+//   {
+//     year: "2024",
+//     title: "Statewide Impact",
+//     description: "TWA was awarded funding for statewide expansion by MO DOC, with employment specialists working in St. Louis, Kansas City, Columbia, and Springfield."
+//   }
+// ];
 
-const institutions = [
-  "Farmington Correctional Center (FCC)",
-  "Missouri Eastern Correctional Center in Pacific (MECC)",
-  "Northeast Correctional Center in Bowling Green (NECC)",
-  "Transition Center of St. Louis (TCSTL)",
-  "Women's Eastern Reception, Diagnostic and Correctional Center in Vandalia (WERDCC)"
-];
+// const institutions = [
+//   "Farmington Correctional Center (FCC)",
+//   "Missouri Eastern Correctional Center in Pacific (MECC)",
+//   "Northeast Correctional Center in Bowling Green (NECC)",
+//   "Transition Center of St. Louis (TCSTL)",
+//   "Women's Eastern Reception, Diagnostic and Correctional Center in Vandalia (WERDCC)"
+// ];
 
-const impactStats = [
-  { number: "1,000+", label: "Job Fair Attendees", description: "Connected with employment opportunities" },
-  { number: "77+", label: "Fair Chance Employers", description: "Committed to holistic hiring practices" },
-  { number: "5", label: "MO DOC Institutions", description: "Providing pre-release services" },
-  { number: "4", label: "Cities Served", description: "St. Louis, Kansas City, Columbia, Springfield" }
-];
+// const impactStats = [
+//   { number: "7.1%", label: "Recidivism Rate", description: "For participants employed with TWA partners" },
+//   { number: "76%", label: "Job Fair Employment Rate", description: "Within two months for jobseekers who follow up" },
+//   { number: "$3,146", label: "Employer Savings Per Hire", description: "Through tax credits and reduced turnover costs" },
+//   { number: "4", label: "Missouri Locations", description: "St. Louis, Kansas City, Columbia, Springfield" }
+// ];
 
-const testimonials = [
-  {
-    quote: "TWA gave me hope when I thought I had none. They didn't just help me find a job - they helped me rebuild my life.",
-    name: "Former Participant",
-    role: "Now Employed in Construction"
-  },
-  {
-    quote: "The support I received from TWA made all the difference. They saw my potential, not just my past.",
-    name: "Program Graduate",
-    role: "Currently in Manufacturing"
-  },
-  {
-    quote: "Working with TWA opened doors I never thought would be available to me. I'm grateful for their belief in second chances.",
-    name: "TWA Alumni",
-    role: "Retail Management"
-  }
-];
+// const testimonials = [
+//   {
+//     quote: "Working with TWA, changed my life. It connected me with great opportunities and kept me away from negative influences and on the right track. It also gave me a job that kept me busy. ",
+//     name: "- Gerarrd, job seeker.",
+//     role: "Now Employed in Construction"
+//   },
+//   {
+//     quote: "The support I received from TWA made all the difference. They saw my potential, not just my past.",
+//     name: "- Program Graduate",
+//     role: "Currently in Manufacturing"
+//   },
+//   {
+//     quote: "Working with TWA opened doors I never thought would be available to me. I'm grateful for their belief in second chances.",
+//     name: "- TWA Alumni",
+//     role: "Retail Management"
+//   }
+// ];
 
 const WhoWeAre = () => {
   return (
@@ -199,13 +201,88 @@ const WhoWeAre = () => {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 px-8 bg-gray-50">
+      {/* <section className="py-20 px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl font-bold mb-8 text-center text-gray-800">IMPACT</h2> */}
+
+          
+          
+          {/* Statistics */}
+          {/* <div className="mb-16">
+            <h3 className="text-4xl font-bold mb-12 text-center text-gray-800">STATISTICS</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {impactStats.map((stat, index) => (
+                <div key={index} className="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow">
+                  <div className="text-4xl font-bold text-blue-600 mb-3">{stat.number}</div>
+                  <h4 className="text-xl font-semibold mb-2 text-gray-800">{stat.label}</h4>
+                  <p className="text-gray-600 text-sm">{stat.description}</p>
+                </div>
+              ))}
+            </div>
+          </div> */}
+
+          {/* Testimonials */}
+          {/* <div>
+            <h3 className="text-4xl font-bold mb-12 text-center text-gray-800">TESTIMONIALS</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-4xl text-blue-600 mb-4">"</div>
+                  <p className="text-gray-700 leading-relaxed mb-6 italic">{testimonial.quote}</p>
+                  <div className="border-t pt-4">
+                    <div className="font-semibold text-gray-800">{testimonial.name}</div>
+                    <div className="text-sm text-gray-600">{testimonial.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+ <section className="py-20 px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-6xl font-bold mb-8 text-center text-gray-800">IMPACT</h2>
           
+          {/* Employer Benefits */}
+          <div className="mb-16">
+            <div className="bg-white rounded-2xl p-12 shadow-lg mb-12">
+              <h3 className="text-4xl font-bold mb-8 text-center text-gray-800">EMPLOYERS</h3>
+              <p className="text-lg leading-relaxed text-center text-gray-700 mb-8 max-w-4xl mx-auto">
+                We recruit employers from a wide variety of industries and can provide training, creative troubleshooting, and trauma-informed approaches that benefit all employees. Now more than ever, employers across the country are reexamining their hiring policies to engage justice-involved applicants. These companies are seeing firsthand what research has consistently shown: that second chance employment not only benefits justice-involved individuals and their families, but also contributes to the success of businesses and communities.
+              </p>
+              <p className="text-xl font-semibold text-center text-blue-600 max-w-3xl mx-auto">
+                Second-chance employers have potential to save $3,146 per hire and discover some of the hardest working and most loyal employees, hiring justice-involved talent has never been a smarter business move.
+              </p>
+            </div>
+
+            {/* Employer Process */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-white mb-12">
+              <h4 className="text-3xl font-bold mb-8 text-center">Our Employer Partner Process</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                  <p className="text-sm leading-relaxed">We meet virtually or in person to hear about your company, your talent needs, and your hiring process.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                  <p className="text-sm leading-relaxed">We connect you with SLU TWA candidates for your consideration.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                  <p className="text-sm leading-relaxed">We provide support for you and SLU TWA jobseekers throughout the hiring process and beyond.</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                  <p className="text-sm leading-relaxed">TWA works with employers to improve public safety and reduce recidivism together.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Statistics */}
           <div className="mb-16">
-            <h3 className="text-4xl font-bold mb-12 text-center text-gray-800">STATISTICS</h3>
+            <h3 className="text-4xl font-bold mb-12 text-center text-gray-800">KEY STATISTICS</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {impactStats.map((stat, index) => (
                 <div key={index} className="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow">
@@ -236,7 +313,7 @@ const WhoWeAre = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section
       <section className="py-20 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-6xl font-bold mb-12 text-center text-gray-800">TEAM</h2>
@@ -261,10 +338,10 @@ const WhoWeAre = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
-      <section className="py-20 px-8 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
+      {/* <section className="py-20 px-8 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-6xl font-bold mb-8">CONTACT US</h2>
           <p className="mb-16 text-xl leading-relaxed">
@@ -284,7 +361,8 @@ const WhoWeAre = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <Community />
     </div>
   );
 };
