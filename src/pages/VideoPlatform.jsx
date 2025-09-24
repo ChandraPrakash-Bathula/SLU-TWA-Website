@@ -305,8 +305,8 @@ const VideoPlatform = () => {
       </header>
 
       {/* Regions Section */}
-      <section className="bg-gray-100 py-8 px-10">
-        <div className="max-w-8xl mx-auto text-center">
+      <section className="bg-gray-100 py-8 px-10 overflow-visible">
+        <div className="max-w-8xl mx-auto text-center overflow-visible">
           <h2 className="text-4xl font-bold mb-4 text-gray-800">
             Together, we can invest in second chances and stronger communities.
           </h2>
@@ -349,7 +349,7 @@ const VideoPlatform = () => {
               </h2>
               <div
                 ref={regionScrollRef}
-                className="flex flex-nowrap w-full overflow-scroll scroll-smooth scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-[#003DA5] scroll-active:overflow-x-auto"
+                className="flex flex-nowrap w-full overflow-x-auto overflow-y-visible scroll-smooth scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-[#003DA5]"
               >
                 {filteredRegions.map((city, index) => (
                   <CityCard key={`${city.cityId}-${index}`} city={city} />

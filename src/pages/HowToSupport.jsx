@@ -893,10 +893,10 @@ export default function SupportTWA() {
       {/* HERO */}
       <header className="flex justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-sky-800 text-white">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow text-center">
             Support TWA
           </h1>
-          <p className="mt-6 max-w-3xl text-lg md:text-xl opacity-90">
+          <p className="mt-6 max-w-5xl text-lg md:text-xl opacity-90 text-center">
             There are many impactful ways to support the Saint Louis University
             Transformative Workforce Academy (SLU TWA) in its mission to empower
             justice-involved individuals. Whether you choose to volunteer your
@@ -907,7 +907,7 @@ export default function SupportTWA() {
             inclusive and equitable workforce.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
               href="#volunteer"
               className="inline-flex items-center gap-3 px-5 py-3 bg-emerald-500 hover:bg-emerald-600 rounded-lg font-semibold"
