@@ -176,19 +176,19 @@ export default function Login() {
           </p>
         </div>
 
-        <div className="flex items-center my-4">
+        {/* <div className="flex items-center my-4">
           <div className="flex-grow border-t border-gray-300"></div>
           <span className="mx-4 text-gray-500 font-['Crimson_Pro']">OR</span>
           <div className="flex-grow border-t border-gray-300"></div>
-        </div>
+        </div> */}
 
-        <button
+        {/* <button
           type="button"
          onClick={() => navigate("/")}
           className="w-full h-[35px] rounded-[5px] bg-gray-100 hover:bg-gray-200 text-gray-700 text-[14px] mb-4 font-['Crimson_Pro'] cursor-pointer transition-colors duration-200"
         >
           Continue as a Guest
-        </button>
+        </button> */}
 
         <p className="text-[12px] font-['Crimson_Pro'] text-gray-500 text-center">
           Contact 314-977-4000 for help
